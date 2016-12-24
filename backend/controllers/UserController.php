@@ -3,7 +3,7 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\User;
+use backend\models\User;
 use backend\models\UserSearch;
 use yii\filters\AccessControl;
 use yii\web\Controller;
