@@ -13,6 +13,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'username')->textInput() ?>
+    <?= $form->field($model, 'newPassword')->textInput(['placeholder' => Yii::t('app', 'Leave it blank if not to change')]) ?>
+    <?= $form->field($model, 'email')->textInput() ?>
     <?= $form->field($model, 'status')->dropDownList(User::statusArr()) ?>
 
     <div class="form-group">

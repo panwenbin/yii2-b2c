@@ -21,11 +21,29 @@ class User extends \common\models\User
             'status' => Yii::t('app', 'Status'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
+            'newPassword' => Yii::t('app', 'New Password'),
         ];
+    }
+
+    public function rules()
+    {
+        return array_merge(parent::rules(), [
+            [['username', 'email', 'newPassword'], 'safe'],
+        ]);
     }
 
     public function getStatusTxt()
     {
         return ArrayHelper::getValue(self::statusArr(), $this->status);
+    }
+
+    public function getNewPassword()
+    {
+        return '';
+    }
+
+    public function setNewPassword($newPassword)
+    {
+        if ($newPassword) parent::setPassword($newPassword);
     }
 }

@@ -28,4 +28,6 @@ return [
     'Remember Me' => '记住我',
     'Sorry, you have NO rights to login to this system!' => '对不起，您无权登录此系统！',
     'Incorrect username or password.' => '用户名或密码错误。',
+    'New Password' => '新密码',
+    'Leave it blank if not to change' => '留空则不做更改',
 ];
