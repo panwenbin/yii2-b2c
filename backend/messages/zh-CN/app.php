@@ -27,4 +27,5 @@ return [
     'Please fill out the following fields to login:' => '请填写下列字段进行登录:',
     'Remember Me' => '记住我',
     'Sorry, you have NO rights to login to this system!' => '对不起，您无权登录此系统！',
+    'Incorrect username or password.' => '用户名或密码错误。',
 ];
