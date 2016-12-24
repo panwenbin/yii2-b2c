@@ -48,6 +48,16 @@ return [
             ],
         ],
         */
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                    ]
+                ]
+            ]
+        ]
     ],
     'params' => $params,
 ];

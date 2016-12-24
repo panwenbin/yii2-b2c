@@ -9,7 +9,17 @@
 namespace backend\models;
 
 
+use Yii;
+
 class User extends \common\models\User
 {
-
+    public function attributeLabels()
+    {
+        return [
+            'username' => Yii::t('app', 'Username'),
+            'status' => Yii::t('app', 'Status'),
+            'created_at' => Yii::t('app', 'Created At'),
+            'updated_at' => Yii::t('app', 'Updated At'),
+        ];
+    }
 }
