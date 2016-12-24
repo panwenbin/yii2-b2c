@@ -7,7 +7,10 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-frontend',
+    'id' => 'yii2-b2c-frontend',
+    'name' => '商城前台',
+    'language' => 'zh-CN',
+    'timeZone' => 'Asia/Shanghai',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
@@ -22,7 +25,7 @@ return [
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
-            'name' => 'advanced-frontend',
+            'name' => 'yii2-b2c-frontend',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
