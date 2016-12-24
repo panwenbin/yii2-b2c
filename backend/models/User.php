@@ -10,6 +10,7 @@ namespace backend\models;
 
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 class User extends \common\models\User
 {
@@ -21,5 +22,10 @@ class User extends \common\models\User
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];
+    }
+
+    public function getStatusTxt()
+    {
+        return ArrayHelper::getValue(self::statusArr(), $this->status);
     }
 }

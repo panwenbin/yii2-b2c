@@ -186,4 +186,16 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    /**
+     * 返回用户状态数组
+     * @return array
+     */
+    public static function statusArr()
+    {
+        return [
+            self::STATUS_DELETED => Yii::t('app', 'Deleted'),
+            self::STATUS_ACTIVE => Yii::t('app', 'Active'),
+        ];
+    }
 }
