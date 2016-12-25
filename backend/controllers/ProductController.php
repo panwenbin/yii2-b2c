@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\gii\ProductDetail;
 use Yii;
 use backend\models\Product;
 use backend\models\ProductSearch;
@@ -64,12 +65,14 @@ class ProductController extends Controller
     public function actionCreate()
     {
         $model = new Product();
+        $productDetail = new ProductDetail();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'productDetail' => $productDetail,
             ]);
         }
     }
