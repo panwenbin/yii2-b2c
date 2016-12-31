@@ -49,17 +49,6 @@ return [
             ],
         ],
         */
-        'i18n' => [
-            'translations' => [
-                'app*' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    'fileMap' => [
-                        'app' => 'app.php',
-                        'app/product' => 'app/product.php',
-                    ]
-                ]
-            ]
-        ],
     ],
     'params' => $params,
 ];

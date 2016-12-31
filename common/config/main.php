@@ -11,5 +11,17 @@ return [
             'timeFormat' => 'HH:mm:ss',
             'currencyCode' => 'CNY',
         ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/product' => 'app/product.php',
+                    ]
+                ]
+            ]
+        ],
     ],
 ];
