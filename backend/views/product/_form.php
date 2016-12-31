@@ -1,6 +1,8 @@
 <?php
 
+use vova07\imperavi\Widget;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -27,7 +29,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'updated_at')->textInput() ?>
 
-    <?= $form->field($productDetail, 'introduction_html')->textarea() ?>
+    <?= $form->field($productDetail, 'introduction_html')->widget(Widget::className(), [
+        'settings' => [
+            'lang' => 'zh_cn',
+            'minHeight' => 200,
+            'imageUpload' => Url::to(['/site/image-upload']),
+            'plugins' => [
+                'clips',
+                'fullscreen',
+                'imagemanager',
+            ]
+        ]]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app/product', 'Create') : Yii::t('app/product', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

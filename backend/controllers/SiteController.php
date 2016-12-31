@@ -26,7 +26,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'image-upload'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -49,6 +49,12 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+            ],
+            'image-upload' => [
+                'class' => 'vova07\imperavi\actions\UploadAction',
+                'url' => Yii::$app->params['frontendUrl'] . '/uploads/', // Directory URL address, where files are stored.
+                'path' => '@frontend/web/uploads', // Or absolute path to directory where files are stored.
+                'uploadOnlyImage' => false, // For not image-only uploading.
             ],
         ];
     }
