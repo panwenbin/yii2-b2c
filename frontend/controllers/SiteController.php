@@ -1,8 +1,10 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\Product;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\data\ActiveDataProvider;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -72,7 +74,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $query = Product::find();
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 6,
+            ],
+        ]);
+        return $this->render('index', ['dataProvider' => $dataProvider]);
     }
 
     /**
